@@ -10,17 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190305171657) do
+ActiveRecord::Schema.define(version: 20190305195411) do
+
+  create_table "interests", force: :cascade do |t|
+    t.string  "interests"
+    t.integer "user_id"
+    t.integer "subject_id"
+    t.index ["subject_id"], name: "index_interests_on_subject_id"
+    t.index ["user_id"], name: "index_interests_on_user_id"
+  end
 
   create_table "subjects", force: :cascade do |t|
-    t.string  "subject"
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_subjects_on_user_id"
+    t.string "subject"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.date   "age"
+    t.date   "dob"
   end
 
 end
