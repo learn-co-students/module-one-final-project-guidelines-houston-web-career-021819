@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20190304231912) do
     t.string  "artist"
     t.string  "album"
     t.string  "genre"
+    t.string  "url"
     t.integer "user_id"
     t.index ["user_id"], name: "index_songs_on_user_id"
   end

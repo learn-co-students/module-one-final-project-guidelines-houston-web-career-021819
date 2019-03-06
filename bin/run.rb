@@ -17,6 +17,7 @@ require_relative '../config/environment'
 
     # else
         
+<<<<<<< HEAD
     #     menu_selection = prompt.select('❤What would you like to do today?❤') do |menu|
     #        menu.enum "."
     #        menu.choice "Your music", 1
@@ -33,6 +34,15 @@ require_relative '../config/environment'
         #    menu.choice "Your Artists", 3
         #    menu.choice "Your Albums", 4
         # end
+=======
+        menu_selection = prompt.select('❤ What would you like to do today? ❤') do |menu|
+           menu.enum "."
+           menu.choice "Your Music", 1
+           menu.choice "Your Statistics ", 2
+           menu.choice "Suggestions", 3
+           menu.choice "Interesting Facts", 4
+        end
+>>>>>>> 4c21f124e86b106ff7ea8190cc3cd6b8e975d1da
 
         # songs = Song.all.select { | song | song.user_id == current_user.id}
 
@@ -64,6 +74,7 @@ require_relative '../config/environment'
             #     puts songs[song_selection].genre
             # end
         
+<<<<<<< HEAD
         # when 2
         #     playlists = Playlist.all.select { | playlist | playlist.user_id == current_user.id}
         #     puts playlists.map { | playlist | playlist.name }
@@ -76,6 +87,20 @@ require_relative '../config/environment'
             # end
             # # puts playlist_selection        
 #TODO: get/ puts all songs belong to this playlist
+=======
+        when 2
+            playlists = Playlist.all.select { | playlist | playlist.user_id == current_user.id}
+            puts playlists.map { | playlist | playlist.name }
+
+#             playlist_selection = prompt.select("❤ ❤ ❤ Which playlist would you like to know? ❤ ❤ ❤") do | menu |
+#                 menu.enum "."
+#                 playlists.each_with_index do | playlist, index |
+#                     menu.choice playlist.name, index
+#                 end
+#             end
+#             puts playlist_selection        
+# #TODO: get/ puts all songs belong to this playlist
+>>>>>>> 4c21f124e86b106ff7ea8190cc3cd6b8e975d1da
 
         # when 3
         #     puts artists = songs.map { | song | song.artist }
@@ -142,3 +167,6 @@ require_relative '../config/environment'
 end
 
 log_in
+
+
+
