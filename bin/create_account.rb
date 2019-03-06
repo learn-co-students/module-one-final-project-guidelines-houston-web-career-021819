@@ -7,7 +7,7 @@ def create_account
         puts "Password Confirmed."
         User.create(username: user_name, password: password)
         puts "YAY! New Account Created."
-        log_in   
+        log_in() 
     else
         puts "Password does not match. Please enter your password again."
         reenter_password = $prompt.ask('Reenter your password:')

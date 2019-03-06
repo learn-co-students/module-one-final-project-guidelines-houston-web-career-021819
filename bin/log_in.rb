@@ -1,6 +1,6 @@
 
 def log_in
-   puts "\e[H\e[2J"
+   # puts "\e[H\e[2J"
    
    heart = $prompt.decorate('❤ ', :magenta)
    login = $prompt.collect do

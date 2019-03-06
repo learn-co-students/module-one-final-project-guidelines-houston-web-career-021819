@@ -1,4 +1,4 @@
-def song_information(current_user, song_selection)
+def song_information(current_user, selected_song)
     puts "\e[H\e[2J"
     song_information = $prompt.select('❤ ❤ ❤ What information would you like to see for this song? ❤ ❤ ❤') do |menu|
         menu.enum "."
@@ -10,20 +10,14 @@ def song_information(current_user, song_selection)
 
     case song_information
     when 1
-        puts users_songs(current_user)[song_selection].artist
+        puts selected_song.artist.split(', ')
+        
     when 2
-        puts users_songs(current_user)[song_selection].album
+        puts selected_song.album
     when 3
-        puts users_songs(current_user)[song_selection].genre
+        puts selected_song.genre
     when 4
-        # play_request = prompt.yes?('Do you want to listen to the song now?') do |q|
-        #     q.suffix 'Yes/No'
-        #     q.positive 'Yes'
-        #     q.negative 'No'
-        #     q.convert -> (input) { !input.match(/^agree$/i).nil? }
-        # end
-        # if play_request == 'Yes'
-        exec(open users_songs(current_user)[song_selection].url)
+        exec(open slected_song.url)
     end
-    main_menu(current_user)
+    # main_menu(current_user)
 end
