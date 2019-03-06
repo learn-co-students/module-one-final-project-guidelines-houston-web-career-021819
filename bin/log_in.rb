@@ -1,5 +1,4 @@
 def log_in
-    prompt = TTY::Prompt.new
     heart = prompt.decorate('❤ ', :magenta)
     login = prompt.collect do
        key(:username).ask('Username:')
