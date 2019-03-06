@@ -1,6 +1,6 @@
-class CreateUserTable < ActiveRecord::Migration[5.0]
+class CreateFriendTable < ActiveRecord::Migration[5.0]
   def change
-    create_table :seniors do |table|
+    create_table :friends do |table|
       table.string :name
       table.date :dob
       table.string :email
