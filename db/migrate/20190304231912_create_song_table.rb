@@ -5,6 +5,7 @@ class CreateSongTable < ActiveRecord::Migration[5.0]
       table.string :artist
       table.string :album
       table.string :genre
+      table.string :url
       table.belongs_to :user
       #rating(1-5)
       #times_played
