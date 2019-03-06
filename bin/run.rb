@@ -2,90 +2,90 @@ require_relative '../config/environment'
 
 #Collect user information
 
-def log_in
-    prompt = TTY::Prompt.new
-    heart = prompt.decorate('❤ ', :magenta)
-    login = prompt.collect do
-       key(:username).ask('Username:')
-       key(:password).mask('Password:', mask: heart)
-    end
+# def log_in
+#     prompt = TTY::Prompt.new
+#     heart = prompt.decorate('❤ ', :magenta)
+#     login = prompt.collect do
+#        key(:username).ask('Username:')
+#        key(:password).mask('Password:', mask: heart)
+#     end
 
-    current_user = User.find_by(username: login[:username], password: login[:password])
+#     current_user = User.find_by(username: login[:username], password: login[:password])
 
-    if !current_user
-       puts "Invalid Login"
+#     if !current_user
+#        puts "Invalid Login"
 
-    else
+    # else
         
-        # menu_selection = prompt.select('❤What would you like to do today?❤') do |menu|
+    #     menu_selection = prompt.select('❤What would you like to do today?❤') do |menu|
+    #        menu.enum "."
+    #        menu.choice "Your music", 1
+    #        menu.choice "Your statistics", 2
+    #        menu.choice "Suggestion", 3
+    #        menu.choice "Interesting Facts", 4
+    #     end
+
+
+        # your_music = prompt.select('❤ ❤ ❤ What would you like to see? ❤ ❤ ❤') do |menu|
         #    menu.enum "."
-        #    menu.choice "", 1
+        #    menu.choice "Your Songs", 1
         #    menu.choice "Your Playlists", 2
         #    menu.choice "Your Artists", 3
         #    menu.choice "Your Albums", 4
         # end
 
+        # songs = Song.all.select { | song | song.user_id == current_user.id}
 
-        first_selection = prompt.select('❤ ❤ ❤ What would you like to see? ❤ ❤ ❤') do |menu|
-           menu.enum "."
-           menu.choice "Your Songs", 1
-           menu.choice "Your Playlists", 2
-           menu.choice "Your Artists", 3
-           menu.choice "Your Albums", 4
-        end
-
-        songs = Song.all.select { | song | song.user_id == current_user.id}
-
-        case first_selection
-        when 1
+        # case your_music
+        # when 1
             
-            puts songs.map { | song | song.title }
+            # puts songs.map { | song | song.title }
 
-            song_selection = prompt.select("❤ ❤ ❤ What song would you like to choose? ❤ ❤ ❤") do | menu |
-                menu.enum "."
-                songs.each_with_index do | song, index |
-                    menu.choice song.title, index
-                end
-            end
+            # song_selection = prompt.select("❤ ❤ ❤ What song would you like to choose? ❤ ❤ ❤") do | menu |
+            #     menu.enum "."
+            #     songs.each_with_index do | song, index |
+            #         menu.choice song.title, index
+            #     end
+            # end
 
-            song_information = prompt.select('❤ ❤ ❤ What information would you like to see for this song? ❤ ❤ ❤') do |menu|
-                menu.enum "."
-                menu.choice "Artist", 1
-                menu.choice "Album", 2
-                menu.choice "Genre", 3 
-            end
+            # song_information = prompt.select('❤ ❤ ❤ What information would you like to see for this song? ❤ ❤ ❤') do |menu|
+            #     menu.enum "."
+            #     menu.choice "Artist", 1
+            #     menu.choice "Album", 2
+            #     menu.choice "Genre", 3 
+            # end
 
-            case song_information
-            when 1
-                puts songs[song_selection].artist
-            when 2
-                puts songs[song_selection].album
-            when 3
-                puts songs[song_selection].genre
-            end
+            # case song_information
+            # when 1
+            #     puts songs[song_selection].artist
+            # when 2
+            #     puts songs[song_selection].album
+            # when 3
+            #     puts songs[song_selection].genre
+            # end
         
-        when 2
-            playlists = Playlist.all.select { | playlist | playlist.user_id == current_user.id}
-            puts playlists.map { | playlist | playlist.name }
+        # when 2
+        #     playlists = Playlist.all.select { | playlist | playlist.user_id == current_user.id}
+        #     puts playlists.map { | playlist | playlist.name }
 
-            playlist_selection = prompt.select("❤ ❤ ❤ Which playlist would you like to know? ❤ ❤ ❤") do | menu |
-                menu.enum "."
-                playlists.each_with_index do | playlist, index |
-                    menu.choice playlist.name, index
-                end
-            end
-            puts playlist_selection        
+            # playlist_selection = prompt.select("❤ ❤ ❤ Which playlist would you like to know? ❤ ❤ ❤") do | menu |
+            #     menu.enum "."
+            #     playlists.each_with_index do | playlist, index |
+            #         menu.choice playlist.name, index
+            #     end
+            # end
+            # # puts playlist_selection        
 #TODO: get/ puts all songs belong to this playlist
 
-        when 3
-            puts artists = songs.map { | song | song.artist }
+        # when 3
+        #     puts artists = songs.map { | song | song.artist }
 
-            artist_selection = prompt.select("❤ ❤ ❤ Which artist would you like to choose? ❤ ❤ ❤") do | menu |
-                menu.enum "."
-                artists.each_with_index do | artist, index |
-                    menu.choice artist, index
-                end
-            end
+        #     artist_selection = prompt.select("❤ ❤ ❤ Which artist would you like to choose? ❤ ❤ ❤") do | menu |
+        #         menu.enum "."
+        #         artists.each_with_index do | artist, index |
+        #             menu.choice artist, index
+        #         end
+        #     end
 
             songs_for_artist = songs.select {| song | song.artist == artists[artist_selection]}
 
