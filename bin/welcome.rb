@@ -1,5 +1,5 @@
 def welcome
-    # puts "\e[H\e[2J"
+    puts "\e[H\e[2J"
     welcome = $prompt.select('❤ WELCOME to Your Personal Music Management System)! What do you want to do today? ❤') do |menu|
        menu.enum "."
        menu.choice "Log In", 1

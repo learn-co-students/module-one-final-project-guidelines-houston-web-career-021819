@@ -1,5 +1,5 @@
 def song_information(current_user, selected_song)
-    puts "\e[H\e[2J"
+    # puts "\e[H\e[2J"
     song_information = $prompt.select('❤ ❤ ❤ What information would you like to see for this song? ❤ ❤ ❤') do |menu|
         menu.enum "."
         menu.choice "Artist", 1
@@ -11,13 +11,14 @@ def song_information(current_user, selected_song)
     case song_information
     when 1
         puts selected_song.artist.split(', ')
-        
+        your_music(current_user)
     when 2
         puts selected_song.album
+        your_music(current_user)
     when 3
         puts selected_song.genre
+        your_music(current_user)
     when 4
-        exec(open slected_song.url)
+        system("open", "#{selected_song.url}")
     end
-    # main_menu(current_user)
 end
