@@ -14,9 +14,7 @@ def log_in
       puts "Invalid Login. Back to the Welcome menu."
       welcome()
    else
-      your_music(current_user)
-      #change to main_menu(current_user)
+      main_menu(current_user)
    end
-    
 end
 

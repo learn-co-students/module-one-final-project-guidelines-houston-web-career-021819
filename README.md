@@ -4,6 +4,10 @@
 
   ## How to start program
 
+  ## Instructions for new users
+    choose create account
+    instructions for CSV link
+
   ## What you can use program for
 
   ##Authors
