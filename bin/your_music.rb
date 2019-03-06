@@ -6,6 +6,7 @@ def your_music(current_user)
         menu.choice "Your Playlists", 2
         menu.choice "Your Artists", 3
         menu.choice "Your Albums", 4
+        menu.choice "No. I don't want to do anything.", 5
     end
 
     case your_music
@@ -22,5 +23,7 @@ def your_music(current_user)
     when 4
         puts albums = users_songs(current_user).map { | song | song.album }
         choose_album(current_user)
+    when 5
+        welcome()
     end
 end

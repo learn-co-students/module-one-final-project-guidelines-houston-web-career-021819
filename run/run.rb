@@ -1,7 +1,8 @@
 require_relative '../config/environment'
 $prompt = TTY::Prompt.new
 
-log_in
+welcome
+# log_in
 
 # Collect user information
 
