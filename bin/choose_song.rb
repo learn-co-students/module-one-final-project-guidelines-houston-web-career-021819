@@ -6,5 +6,6 @@ def choose_song(current_user)
             menu.choice song.title, index
         end
     end
+    
     song_information(current_user, song_selection)
 end
