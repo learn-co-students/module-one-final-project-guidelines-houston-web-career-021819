@@ -1,9 +1,9 @@
 def album_information
-    songs_for_album = songs.select {| song | song.album == albums[album_selection]}
+    songs_for_album = users_songs(current_user).select {| song | song.album == albums[album_selection]}
 
-    artists_for_album = songs.select {| song | song.album == albums[album_selection]}
+    artists_for_album = users_songs(current_user).select {| song | song.album == albums[album_selection]}
             
-    album_information = prompt.select('❤ ❤ ❤ What information would you like to know for this album? ❤ ❤ ❤') do |menu|
+    album_information = $prompt.select('❤ ❤ ❤ What information would you like to know for this album? ❤ ❤ ❤') do |menu|
         menu.enum "."
         menu.choice "Songs", 1
         menu.choice "Artists", 2

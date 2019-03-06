@@ -10,9 +10,8 @@ def log_in
     
    if !current_user
       puts "Invalid Login"
-
    else
-      your_music
+      your_music(current_user)
    end
     
 end
