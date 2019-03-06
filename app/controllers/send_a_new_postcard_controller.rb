@@ -1,12 +1,10 @@
 def send_a_new_post_card
     ### Get user name
     prompt = TTY::Prompt.new
-    first_name = prompt.ask("What is your first name?")
+    name = prompt.ask("What is your name?")
 
-    prompt = TTY::Prompt.new
-    last_name = prompt.ask("What is your last name?")
     
-    member = Member.create(first_name:"#{first_name}", last_name:"#{last_name}")
+    sender = Sender.create(name:"#{name}")
 
 
 
@@ -33,5 +31,6 @@ def send_a_new_post_card
 
     postcard = Postcard.create(category: "#{chosen_category}", size:"#{chosen_size}", cost:total_cost)
     
-    member.postcards << postcard
+    #postcard.member = member
+    #member.postcards
 end

@@ -12,27 +12,26 @@
 
 ActiveRecord::Schema.define(version: 20190305192802) do
 
-  create_table "members", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "address"
-    t.string "email"
-    t.float  "balance"
-  end
-
   create_table "postcards", force: :cascade do |t|
-    t.integer "member_id"
+    t.integer "sender_id"
     t.integer "receiver_id"
     t.string  "category"
     t.string  "size"
     t.float   "cost"
     t.string  "message"
+    t.index ["receiver_id"], name: "index_postcards_on_receiver_id"
+    t.index ["sender_id"], name: "index_postcards_on_sender_id"
   end
 
   create_table "receivers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "name"
     t.string "address"
+  end
+
+  create_table "senders", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "email"
   end
 
 end
