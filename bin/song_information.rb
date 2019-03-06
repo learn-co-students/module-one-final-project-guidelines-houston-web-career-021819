@@ -1,4 +1,5 @@
-def song_information
+def song_information(current_user, song_selection)
+    puts "\e[H\e[2J"
     song_information = $prompt.select('❤ ❤ ❤ What information would you like to see for this song? ❤ ❤ ❤') do |menu|
         menu.enum "."
         menu.choice "Artist", 1
@@ -14,5 +15,5 @@ def song_information
     when 3
         puts users_songs(current_user)[song_selection].genre
     end
-    main_menu
+    main_menu(current_user)
 end

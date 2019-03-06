@@ -1,4 +1,5 @@
-def main_menu
+def main_menu(current_user)
+    puts "\e[H\e[2J"
     main_menu = $prompt.select('❤What would you like to do today?❤') do |menu|
     menu.enum "."
     menu.choice "Your music", 1
