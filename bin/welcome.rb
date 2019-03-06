@@ -4,9 +4,9 @@ def welcome
        menu.choice "Log In", 1
        menu.choice "Create a New Account", 2
     end
-    if welcome = 1
+    if welcome == 1
         log_in()
-    elsif welcome = 2
+    elsif welcome == 2
         create_account()
     end
 end

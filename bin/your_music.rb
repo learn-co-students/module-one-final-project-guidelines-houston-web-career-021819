@@ -1,6 +1,7 @@
+
 def your_music
 
-    your_music = prompt.select('❤ ❤ ❤ What would you like to see? ❤ ❤ ❤') do |menu|
+    your_music = $prompt.select('❤ ❤ ❤ What would you like to see? ❤ ❤ ❤') do |menu|
         menu.enum "."
         menu.choice "Your Songs", 1
         menu.choice "Your Playlists", 2
@@ -19,6 +20,7 @@ def your_music
     when 3
         puts artists = songs.map { | song | song.artist }
         choose_artist
-
-
+    when 4
+        puts albums = songs.map { | song | song.album }
+    end
 end
