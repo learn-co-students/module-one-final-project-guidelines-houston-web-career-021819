@@ -1,0 +1,22 @@
+def create_account
+    user_name = $prompt.ask('Please choose a new username:')
+    password = $prompt.ask('Please enter your password:')
+    confirm_password = $prompt.mask('Confirm your password:')
+
+    if password == confirm_password
+        puts "Password Confirmed."
+        User.create(username: user_name, password: password)
+        puts "YAY! New Account Created."
+        log_in   
+    else
+        puts "Password does not match. Please enter your password again."
+        reenter_password = $prompt.ask('Reenter your password:')
+        if reenter_password == password
+            puts "Password Confirmed."
+            User.create(username: user_name, password: password)
+            puts "YAY! New Account Created."
+            log_in()
+        end
+    end
+
+end
