@@ -1,6 +1,4 @@
-
-def your_music
-
+def your_music(current_user)
     your_music = $prompt.select('❤ ❤ ❤ What would you like to see? ❤ ❤ ❤') do |menu|
         menu.enum "."
         menu.choice "Your Songs", 1
@@ -11,16 +9,17 @@ def your_music
 
     case your_music
     when 1
-        puts songs.map { | song | song.title }
+        puts users_songs(current_user).map { | song | song.title }
         choose_song
     when 2
         playlists = Playlist.all.select { | playlist | playlist.user_id == current_user.id}
         puts playlists.map { | playlist | playlist.name }
         # choose_playlist
     when 3
-        puts artists = songs.map { | song | song.artist }
+        puts artists = users_songs(current_user).map { | song | song.artist }
         choose_artist
     when 4
-        puts albums = songs.map { | song | song.album }
+        puts albums = users_songs(current_user).map { | song | song.album }
+        choose_album
     end
 end
