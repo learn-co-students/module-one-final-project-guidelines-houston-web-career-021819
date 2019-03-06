@@ -1,4 +1,5 @@
-def artist_information
+def artist_information(current_user, artist_selection)
+    puts "\e[H\e[2J"
     songs_for_artist = users_songs(current_user).select {| song | song.artist == artists[artist_selection]}
 
     albums_for_artist = users_songs(current_user).select {| song | song.artist == artists[artist_selection]}
@@ -15,4 +16,5 @@ def artist_information
     when 2
         puts  albums_for_artist.map {| song | song.album} 
     end
+    main_menu(current_user)
 end
