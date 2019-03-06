@@ -19,6 +19,7 @@ def send_a_new_post_card
     prompt = TTY::Prompt.new
     chosen_size = prompt.select("[Choose a size]  What size suits your fancy?", %w(Small($2.50) Medium($3.00) Large($3.50) ))
    
+
     ### Get total cost
     if chosen_size.include?("Small")
         total_cost = 2.5
@@ -33,5 +34,4 @@ def send_a_new_post_card
     postcard = Postcard.create(category: "#{chosen_category}", size:"#{chosen_size}", cost:total_cost)
     
     member.postcards << postcard
-    member.postcards
 end
