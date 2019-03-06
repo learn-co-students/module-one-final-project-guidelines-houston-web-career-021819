@@ -7,3 +7,4 @@ gem "pry"
 gem 'tty-prompt'
 
 gem "require_all"
+gem 'tty-prompt'
