@@ -1,4 +1,9 @@
 require_relative '../config/environment'
+$prompt = TTY::Prompt.new
+
+ 
+
+log_in
 
 #Collect user information
 
@@ -17,7 +22,6 @@ require_relative '../config/environment'
 
     # else
         
-<<<<<<< HEAD
     #     menu_selection = prompt.select('❤What would you like to do today?❤') do |menu|
     #        menu.enum "."
     #        menu.choice "Your music", 1
@@ -34,15 +38,6 @@ require_relative '../config/environment'
         #    menu.choice "Your Artists", 3
         #    menu.choice "Your Albums", 4
         # end
-=======
-        menu_selection = prompt.select('❤ What would you like to do today? ❤') do |menu|
-           menu.enum "."
-           menu.choice "Your Music", 1
-           menu.choice "Your Statistics ", 2
-           menu.choice "Suggestions", 3
-           menu.choice "Interesting Facts", 4
-        end
->>>>>>> 4c21f124e86b106ff7ea8190cc3cd6b8e975d1da
 
         # songs = Song.all.select { | song | song.user_id == current_user.id}
 
@@ -74,23 +69,9 @@ require_relative '../config/environment'
             #     puts songs[song_selection].genre
             # end
         
-<<<<<<< HEAD
         # when 2
         #     playlists = Playlist.all.select { | playlist | playlist.user_id == current_user.id}
         #     puts playlists.map { | playlist | playlist.name }
-
-            # playlist_selection = prompt.select("❤ ❤ ❤ Which playlist would you like to know? ❤ ❤ ❤") do | menu |
-            #     menu.enum "."
-            #     playlists.each_with_index do | playlist, index |
-            #         menu.choice playlist.name, index
-            #     end
-            # end
-            # # puts playlist_selection        
-#TODO: get/ puts all songs belong to this playlist
-=======
-        when 2
-            playlists = Playlist.all.select { | playlist | playlist.user_id == current_user.id}
-            puts playlists.map { | playlist | playlist.name }
 
 #             playlist_selection = prompt.select("❤ ❤ ❤ Which playlist would you like to know? ❤ ❤ ❤") do | menu |
 #                 menu.enum "."
@@ -100,7 +81,6 @@ require_relative '../config/environment'
 #             end
 #             puts playlist_selection        
 # #TODO: get/ puts all songs belong to this playlist
->>>>>>> 4c21f124e86b106ff7ea8190cc3cd6b8e975d1da
 
         # when 3
         #     puts artists = songs.map { | song | song.artist }
@@ -112,61 +92,60 @@ require_relative '../config/environment'
         #         end
         #     end
 
-            songs_for_artist = songs.select {| song | song.artist == artists[artist_selection]}
+            # songs_for_artist = songs.select {| song | song.artist == artists[artist_selection]}
 
-            albums_for_artist = songs.select {| song | song.artist == artists[artist_selection]}
+            # albums_for_artist = songs.select {| song | song.artist == artists[artist_selection]}
             
-            artist_information = prompt.select('❤ ❤ ❤ What information would you like to see for this artist? ❤ ❤ ❤') do |menu|
-                menu.enum "."
-                menu.choice "Songs", 1
-                menu.choice "Albums", 2
-            end
+            # artist_information = prompt.select('❤ ❤ ❤ What information would you like to see for this artist? ❤ ❤ ❤') do |menu|
+            #     menu.enum "."
+            #     menu.choice "Songs", 1
+            #     menu.choice "Albums", 2
+            # end
             
-            case artist_information
-            when 1
-                puts  songs_for_artist.map {| song | song.title} 
-            when 2
-                puts  albums_for_artist.map {| song | song.album} 
-            end
+            # case artist_information
+            # when 1
+            #     puts  songs_for_artist.map {| song | song.title} 
+            # when 2
+            #     puts  albums_for_artist.map {| song | song.album} 
+            # end
 
 
-        when 4
-            puts albums = songs.map { | song | song.album }
-            album_selection = prompt.select("❤ ❤ ❤ Which album would you like to know? ❤ ❤ ❤") do | menu |
-                menu.enum "."
-                albums.each_with_index do | album, index |
-                    menu.choice album, index
-                end
-            end
+        # when 4
+        #     puts albums = songs.map { | song | song.album }
+        #     album_selection = prompt.select("❤ ❤ ❤ Which album would you like to know? ❤ ❤ ❤") do | menu |
+        #         menu.enum "."
+        #         albums.each_with_index do | album, index |
+        #             menu.choice album, index
+        #         end
+        #     end
 
-            songs_for_album = songs.select {| song | song.album == albums[album_selection]}
+            # songs_for_album = songs.select {| song | song.album == albums[album_selection]}
 
-            artists_for_album = songs.select {| song | song.album == albums[album_selection]}
+            # artists_for_album = songs.select {| song | song.album == albums[album_selection]}
             
-            album_information = prompt.select('❤ ❤ ❤ What information would you like to know for this album? ❤ ❤ ❤') do |menu|
-                menu.enum "."
-                menu.choice "Songs", 1
-                menu.choice "Artists", 2
-            end
+            # album_information = prompt.select('❤ ❤ ❤ What information would you like to know for this album? ❤ ❤ ❤') do |menu|
+            #     menu.enum "."
+            #     menu.choice "Songs", 1
+            #     menu.choice "Artists", 2
+            # end
             
-            case album_information
-            when 1
-                puts  songs_for_album.map {| song | song.title} 
-            when 2
-                puts  artists_for_album.map {| song | song.artist} 
-            end
+            # case album_information
+            # when 1
+            #     puts  songs_for_album.map {| song | song.title} 
+            # when 2
+            #     puts  artists_for_album.map {| song | song.artist} 
+            # end
 
 
 
-        end
+#         end
 
 
 
-    end
+#     end
 
-end
+# end
 
-log_in
 
 
 

@@ -5,4 +5,5 @@ def choose_artist
             menu.choice artist, index
         end
     end
+    artist_information
 end
