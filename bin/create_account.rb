@@ -6,14 +6,14 @@ def create_account
 
     if password == confirm_password
         puts "Password Confirmed."
-        User.create(username: user_name, password: password)
+        Account.create(username: user_name, password: password)
         puts "YAY! New Account Created. "
     else
         puts "Password does not match. Please enter your password again."
         reenter_password = $prompt.ask('Reenter your password:')
         if reenter_password == password
             puts "Password Confirmed."
-            User.create(username: user_name, password: password)
+            Account.create(username: user_name, password: password)
             puts "YAY! New Account Created. "
             # import_csv()
         else

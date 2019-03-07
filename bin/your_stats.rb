@@ -14,7 +14,7 @@ def your_stats(current_user)
         main_menu(current_user)
     when 2
         albums = users_songs(current_user).map { | song | song.album }
-        num_albums = albums.length
+        num_albums = albums.uniq.length
         puts "You have #{num_albums} albums."
         main_menu(current_user)
     when 3
