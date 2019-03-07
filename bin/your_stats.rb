@@ -4,7 +4,6 @@ def your_stats(current_user)
     menu.enum ". "
     menu.choice "Total number of songs", 1
     menu.choice "Total number of albums", 2
-    menu.choice "Your Favorite genre", 3
     end
 
     case your_stats
@@ -16,9 +15,6 @@ def your_stats(current_user)
         albums = users_songs(current_user).map { | song | song.album }
         num_albums = albums.uniq.length
         puts "You have #{num_albums} albums."
-        main_menu(current_user)
-    when 3
-        puts "Your favorite genre is #{favorite_genre(current_user)}."
         main_menu(current_user)
     end
 end

@@ -5,9 +5,7 @@ class User < ActiveRecord::Base
     has_one :account
     belongs_to :song
 
-    # def number_of_songs
-    #     self.account.songs.length
-    # end
+    
 
     # def number_of_albums
     #     self.songs.album.length
