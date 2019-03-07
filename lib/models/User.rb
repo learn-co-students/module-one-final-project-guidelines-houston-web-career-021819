@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
 
-    belongs_to :song
+    has_many :songs
     belongs_to :playlist
+    belongs_to :song
+
+    def number_of_songs
+        self.songs.length
+    end
 
 end
