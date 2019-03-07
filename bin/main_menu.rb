@@ -14,7 +14,8 @@ def main_menu(current_user)
     when 2
         your_stats(current_user)
     when 3
-        suggestions(current_user)
+        puts "Currently under production"
+        main_menu(current_user)
     when 4
         interesting_facts(current_user)
     end
