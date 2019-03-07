@@ -8,4 +8,7 @@ class User < ActiveRecord::Base
         self.songs.length
     end
 
+    # def number_of_albums
+    #     self.songs.album.length
+    # end
 end
