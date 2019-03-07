@@ -6,9 +6,8 @@ class User < ActiveRecord::Base
     belongs_to :song
 
     # def number_of_songs
-    #     self.account.songs.length
+    #     self.account_id.songs.length
     # end
-
     # def number_of_albums
     #     self.songs.album.length
     # end

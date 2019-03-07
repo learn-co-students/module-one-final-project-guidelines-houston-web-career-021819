@@ -20,6 +20,7 @@ def song_information(current_user, selected_song)
         main_menu(current_user)
     when 4
         system("open", "#{selected_song.url}")
+        main_menu(current_user)
     end
 end
 
