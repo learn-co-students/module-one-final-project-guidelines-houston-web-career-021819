@@ -41,7 +41,6 @@
                       - What information would you like to see for this song?
                       1. Artist
                       2. Album
-                      3. Genre
                       4. Play Song
               2. Your Playlists
 
@@ -73,8 +72,6 @@
               2. Total number of albums
 
                   - You have (number) albums
-              3. Your favorite genre
-                  - currently in production
           3. Suggestion
               - currently in production
           4. Intersting facts
