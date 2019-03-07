@@ -11,11 +11,14 @@ def your_stats(current_user)
     when 1
         num_songs = users_songs(current_user).length
         puts "You have #{num_songs} songs."
+        main_menu(current_user)
     when 2
         albums = users_songs(current_user).map { | song | song.album }
         num_albums = albums.uniq.length
         puts "You have #{num_albums} albums."
+        main_menu(current_user)
     when 3
         puts "Your favorite genre is #{favorite_genre(current_user)}."
+        main_menu(current_user)
     end
 end
