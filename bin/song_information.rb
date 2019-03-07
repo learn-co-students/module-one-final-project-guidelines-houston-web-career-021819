@@ -4,7 +4,7 @@ def song_information(current_user, selected_song)
         menu.enum "."
         menu.choice "Artist", 1
         menu.choice "Album", 2
-        menu.choice "Genre", 3 
+        menu.choice "Duration of the Song", 3 
         menu.choice "Play the Song", 4
     end
 
@@ -16,8 +16,13 @@ def song_information(current_user, selected_song)
         puts selected_song.album
         main_menu(current_user)
     when 3
-        puts selected_song.genre
+        duration_mins = (selected_song.duration_in_seconds).to_f.round(6) / 1000 / 60
+        arr = duration_mins.to_s.split('.')
+        min = arr[0]
+        sec = (((arr[1].to_i)  / 10000 * 60).round(2)).to_s.first(2).to_i
+        puts "#{min} minutes and #{sec} seconds." 
         main_menu(current_user)
+        
     when 4
         system("open", "#{selected_song.url}")
         main_menu(current_user)

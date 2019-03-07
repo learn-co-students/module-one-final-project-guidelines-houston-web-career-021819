@@ -13,6 +13,7 @@ def log_in
     
    if !current_user
       puts "Invalid Login. Back to the Welcome menu."
+      puts "❤ Are you a new user? You don't have any songs yet. Back to the Welcome menu. ❤"
       welcome()
    else
       main_menu(current_user)
