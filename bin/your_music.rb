@@ -14,7 +14,7 @@ def your_music(current_user)
         puts users_songs(current_user).map { | song | song.title }
         choose_song(current_user)
     when 2
-        playlists = Playlist.all.select { | playlist | playlist.user_id == current_user.id}
+        playlists = Playlist.all.select { | playlist | playlist.account_id == current_user.account_id}
         puts playlists.map { | playlist | playlist.name }
         your_music(current_user)
     when 3

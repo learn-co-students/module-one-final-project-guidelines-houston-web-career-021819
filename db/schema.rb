@@ -10,29 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190304231912) do
+ActiveRecord::Schema.define(version: 20190307170801) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+  end
 
   create_table "playlists", force: :cascade do |t|
     t.string  "name"
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_playlists_on_user_id"
+    t.integer "account_id"
+    t.index ["account_id"], name: "index_playlists_on_account_id"
   end
 
   create_table "songs", force: :cascade do |t|
+    t.string  "url"
     t.string  "title"
     t.string  "artist"
     t.string  "album"
-    t.string  "genre"
-    t.string  "url"
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_songs_on_user_id"
+    t.integer "duration_in_seconds"
+    t.integer "account_id"
+    t.index ["account_id"], name: "index_songs_on_account_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string  "username"
-    t.string  "password"
     t.integer "song_id"
     t.integer "playlist_id"
+    t.integer "account_id"
     t.index ["playlist_id"], name: "index_users_on_playlist_id"
     t.index ["song_id"], name: "index_users_on_song_id"
   end

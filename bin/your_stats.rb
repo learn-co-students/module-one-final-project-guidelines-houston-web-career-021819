@@ -13,7 +13,7 @@ def your_stats(current_user)
         puts "You have #{num_songs} songs."
     when 2
         albums = users_songs(current_user).map { | song | song.album }
-        num_albums = albums.length
+        num_albums = albums.uniq.length
         puts "You have #{num_albums} albums."
     when 3
         puts "Your favorite genre is #{favorite_genre(current_user)}."

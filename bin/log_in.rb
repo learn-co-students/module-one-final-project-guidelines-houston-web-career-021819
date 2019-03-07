@@ -8,7 +8,9 @@ def log_in
       key(:password).mask('Please enter your password:', mask: heart)
    end
    
-   current_user = User.find_by(username: login[:username], password: login[:password])
+   current_account = Account.find_by(username: login[:username], password: login[:password])
+   current_user = User.find_by(account_id: current_account.id)
+
     
    if !current_user
       puts "Invalid Login. Back to the Welcome menu."
