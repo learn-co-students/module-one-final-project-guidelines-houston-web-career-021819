@@ -22,3 +22,4 @@ def song_information(current_user, selected_song)
         system("open", "#{selected_song.url}")
     end
 end
+

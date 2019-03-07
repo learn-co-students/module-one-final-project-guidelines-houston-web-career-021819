@@ -1,9 +1,11 @@
+require 'csv'
 Song.destroy_all
 User.destroy_all
 Playlist.destroy_all
 
 trey = User.create(username: "Trey", password: "Password")
 jing = User.create(username: "Jing", password: "Password")
+
 
 
 song = Song.create(title: "Enter the Unseen", artist: "Steven Goldmund", album: "Deep Below", genre: "World Music", url: "spotify:track:0wpHo9ufyiNdbnr9lIe0B8", user_id: trey.id)
