@@ -8,4 +8,5 @@ def favorite_genre(current_user)
         listed_genres[key] = value
     end
     favorite_genre = listed_genres.key(listed_genres.values.max)
+    main_menu(current_user)
 end

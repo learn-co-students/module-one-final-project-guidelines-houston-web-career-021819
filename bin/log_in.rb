@@ -1,4 +1,3 @@
-
 def log_in
    # puts "\e[H\e[2J"
    
@@ -17,4 +16,3 @@ def log_in
       main_menu(current_user)
    end
 end
-

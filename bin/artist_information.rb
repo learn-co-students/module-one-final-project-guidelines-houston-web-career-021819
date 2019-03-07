@@ -14,9 +14,9 @@ def artist_information(current_user, selected_artist)
     case artist_information
     when 1
         puts  songs_for_artist.map {| song | song.title} 
-        your_music(current_user)
+        main_menu(current_user)
     when 2
         puts  albums_for_artist.map {| song | song.album} 
-        your_music(current_user)
+        main_menu(current_user)
     end  
 end

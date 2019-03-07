@@ -11,13 +11,13 @@ def song_information(current_user, selected_song)
     case song_information
     when 1
         puts selected_song.artist.split(', ')
-        your_music(current_user)
+        main_menu(current_user)
     when 2
         puts selected_song.album
-        your_music(current_user)
+        main_menu(current_user)
     when 3
         puts selected_song.genre
-        your_music(current_user)
+        main_menu(current_user)
     when 4
         system("open", "#{selected_song.url}")
     end
