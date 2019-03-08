@@ -6,6 +6,7 @@ def main_menu(current_user)
         menu.choice "Your Statistics", 2
         menu.choice "Suggestion", 3
         menu.choice "Interesting Facts", 4
+        menu.choice "Nothing. Back to Welcome menu.", 5
     end
 
     case menu_selection
@@ -18,5 +19,7 @@ def main_menu(current_user)
         main_menu(current_user)
     when 4
         interesting_facts(current_user)
+    when 5
+        welcome()
     end
 end

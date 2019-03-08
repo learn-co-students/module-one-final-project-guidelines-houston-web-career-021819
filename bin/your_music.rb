@@ -6,7 +6,7 @@ def your_music(current_user)
         menu.choice "Your Playlists", 2
         menu.choice "Your Artists", 3
         menu.choice "Your Albums", 4
-        menu.choice "No. I don't want to do anything.", 5
+        menu.choice "No. I don't want to do anything. Take me back to the main menu.", 5
     end
 
     case your_music
