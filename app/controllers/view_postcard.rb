@@ -19,6 +19,9 @@
     
     
     puts ""
+    puts "Type: #{selected_postcard.category}"
+    puts ""
+    puts "Deco: #{selected_postcard.deco.split("(")[0]}"
     puts ""
     puts "To: #{selected_receiver}"
     puts ""
