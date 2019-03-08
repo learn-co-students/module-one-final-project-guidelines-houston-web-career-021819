@@ -24,14 +24,20 @@
 
 ---
 
-  ## Instruction for new users
+  ## Video Demo
+
+- Check out our [Video Demo](https://drive.google.com/file/d/1wsHR_71Kq3Tk9HqfldOnMH_DGQD-NLKx/view?usp=sharing) for this application.
+
+---
+
+  ## Instruction for New Users
 
 - The first menu allows for you to create a new user. Input a username and password to create the account. 
 - As a new user, you may add your data to the currently available `.csv` data file under the folder `/db`. You may have to edit your `.csv` file so that our application can get and retrieve your data. (Please see the following section for how to prepare your `.csv` file.)
 - After you import your data, in your terminal, please type `rake db:seed`, if successful, your data should be already in our database `development.db` under `/db` folder. 
 ---
 
-  ## For New Users: How to create and prepare your .CSV file?
+  ## For New Users: How to Prepare your .CSV File?
   
 - We recommend new users to generate .csv files via [Exportify](https://rawgit.com/watsonbox/exportify/master/exportify.html), a free app that automatically generates .csv file for each Spotify playlist.
 
@@ -42,7 +48,7 @@
 - **Additional Tips**: If you want to get data from other music and video sources, please check out the [Payed option for many sources](https://freeyourmusic.com/) for details. 
 
 ---
-  ## The structure of our menu choices
+  ## Menu Structure
 
 ```
 Welcome
