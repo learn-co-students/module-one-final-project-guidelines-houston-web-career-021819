@@ -1,8 +1,51 @@
-#require 'csv'
-#Member.destroy_all
- Adam = Member.create(first_name: "Adam", last_name: "Moran", address: "Table 3", email: "Adam.Moran@flatironschool.com")
- Cory = Member.create(first_name: "Cory", last_name: "Harper", address: "Table 1", email: "Cory.Harper@flatironschool.com")
- Eli = Member.create(first_name: "Eli", last_name: "Lauffenburger", address: "Table 2", email: "Eli.Lauffenburger@flatironschool.com")
+
+ Adam = Sender.create(name: "Adam Moran", password:"I am Adam", address: "Table 3", email: "Adam.Moran@flatironschool.com")
+
+ ###### 1.Adam
+ Adam_parent = Receiver.create(name: "Cathrine Minor", address: "4643 Michael Street")
+ Adam_colleague = Receiver.create(name: "Tori Vang", address: "2433  Monroe Street")
+ Adam_friend = Receiver.create(name: "Zac Efron", address: "1318 Westheimer Rd")
+ Postcard.create(sender_id: 1, receiver_id: 1, category:"Parent", size:"Large($3.50)", deco: "Profile", cost:4.50, 
+                 message:"Everything you’ve ever wanted is on the other side of fear!")
+ Postcard.create(sender_id: 1, receiver_id: 2, category:"Colleague", size:"Large($3.50)", deco: "Audio", cost:4.50,                      
+                 message:"Start by doing what’s necessary; then do what’s possible; and suddenly you are doing the impossible.")
+ Postcard.create(sender_id: 1, receiver_id: 3, category:"Friend", size:"Medium($3.00)", deco: "Landscape", cost:4.00, 
+                 message:"Your are not a product of my circumstances. You are a product of my decisions.")
+
+
+
+ ##### 2.Cory
+ Cory = Sender.create(name: "Cory Harper", password:"I am Cory", address: "Table 1", email: "Cory.Harper@flatironschool.com")
+ Cory_friend = Receiver.create(name: "Talor Swift", address: "3681  Monroe Street")
+ Cory_Colleague = Receiver.create(name: "Ryan Reynolds", address:"871 Sutter St")
+ Cory_grandparent = Receiver.create(name: "George Clooney", address:"974 Valencia St")
+
+ Postcard.create(sender_id: 2, receiver_id: 4, category:"Friend", size:"Large($3.50)", deco: "Comedy", cost:5.50, 
+                 message:"Everything you’ve ever wanted is on the other side of fear!")
+ Postcard.create(sender_id: 2, receiver_id: 5, category:"Colleague", size:"Large($3.50)", deco: "Profile", cost:3.50, 
+                 message:"You’re going to go through tough times – that’s life. But I say, ‘Nothing happens to you, it happens for you.’ See the positive in negative events.")
+ Postcard.create(sender_id: 2, receiver_id: 6, category:"Grandparent", size:"Medium($3.0)", deco: "Landscape", cost:3.00, 
+                 message:"Success means doing the best we can with what we have. Success is the doing, not the getting; in the trying, not the triumph. Success is a personal standard, reaching for the highest that is in us, becoming all that we can be.")
+ 
+
+
+
+ #### 3.Eli 
+ Eli = Sender.create(name: "Eli Lauffenburger", address: "Table 2", email: "Eli.Lauffenburger@flatironschool.com")
+ Eli_friend = Receiver.create(name: "Natalie Portman", address: "505 Beach St")
+ Eli_Colleague = Receiver.create(name: "Ben Affleck", address:"3499 16th St")
+ Eli_grandparent = Receiver.create(name: "Daniel Craig", address:"1965 Al Scoma Way")
+
+ Postcard.create(sender_id: 3, receiver_id: 7, category:"Friend", size:"Large($3.50)", deco: "Comedy", cost:5.50, 
+                 message:"It is during our darkest moments that we must focus to see the light.")
+ Postcard.create(sender_id: 3, receiver_id: 8, category:"Colleague", size:"Large($3.50)", deco: "Profile", cost:3.50, 
+                 message:"You’re going to go through tough times – that’s life. But I say, ‘Nothing happens to you, it happens for you.’ See the positive in negative events.")
+ Postcard.create(sender_id: 3, receiver_id: 9, category:"Grandparent", size:"Medium($3.0)", deco: "Landscape", cost:3.00, 
+                 message:"Perfection is not attainable, but if we chase perfection we can catch excellence.")
+ 
+
+
+
 =begin
 
 first_name, last_name, address, email, balance

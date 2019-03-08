@@ -5,6 +5,7 @@ class CreatePostcardsTable < ActiveRecord::Migration[5.0]
       t.belongs_to :receiver
       t.string :category
       t.string :size
+      t.string :deco
       t.float :cost
       t.string :message
     end

@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20190305192802) do
     t.integer "receiver_id"
     t.string  "category"
     t.string  "size"
+    t.string  "deco"
     t.float   "cost"
     t.string  "message"
     t.index ["receiver_id"], name: "index_postcards_on_receiver_id"
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20190305192802) do
 
   create_table "senders", force: :cascade do |t|
     t.string "name"
+    t.string "password"
     t.string "address"
     t.string "email"
   end
