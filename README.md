@@ -1,59 +1,132 @@
-# Module One Final Project Guidelines
+# Welcome to Your Personal Music Management System!
+ 
+  This command-line application allows users to manage personal music data.
 
-Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
+  ## Features
 
-For your final project, we'll be building a Command Line database application.
-
-## Project Requirements
-
-### Option One - Data Analytics Project
-
-1. Access a Sqlite3 Database using ActiveRecord.
-2. You should have at minimum three models including one join model. This means you must have a many-to-many relationship.
-3. You should seed your database using data that you collect either from a CSV, a website by scraping, or an API.
-4. Your models should have methods that answer interesting questions about the data. For example, if you've collected info about movie reviews, what is the most popular movie? What movie has the most reviews?
-5. You should provide a CLI to display the return values of your interesting methods.  
-6. Use good OO design patterns. You should have separate classes for your models and CLI interface.
-
-  **Resource:** [Easy Access APIs](https://github.com/learn-co-curriculum/easy-access-apis)
-
-### Option Two - Command Line CRUD App
-
-1. Access a Sqlite3 Database using ActiveRecord.
-2. You should have a minimum of three models.
-3. You should build out a CLI to give your user full CRUD ability for at least one of your resources. For example, build out a command line To-Do list. A user should be able to create a new to-do, see all todos, update a todo item, and delete a todo. Todos can be grouped into categories, so that a to-do has many categories and categories have many to-dos.
-4. Use good OO design patterns. You should have separate models for your runner and CLI interface.
-
-### Brainstorming and Proposing a Project Idea
-
-Projects need to be approved prior to launching into them, so take some time to brainstorm project options that will fulfill the requirements above.  You must have a minimum of four [user stories](https://en.wikipedia.org/wiki/User_story) to help explain how a user will interact with your app.  A user story should follow the general structure of `"As a <role>, I want <goal/desire> so that <benefit>"`. In example, if we were creating an app to randomly choose nearby restaurants on Yelp, we might write:
-
-* As a user, I want to be able to enter my name to retrieve my records
-* As a user, I want to enter a location and be given a random nearby restaurant suggestion
-* As a user, I should be able to reject a suggestion and not see that restaurant suggestion again
-* As a user, I want to be able to save to and retrieve a list of favorite restaurant suggestions
-
-## Instructions
-
-1. Fork and clone this repository.
-2. Build your application. Make sure to commit early and commit often. Commit messages should be meaningful (clearly describe what you're doing in the commit) and accurate (there should be nothing in the commit that doesn't match the description in the commit message). Good rule of thumb is to commit every 3-7 mins of actual coding time. Most of your commits should have under 15 lines of code and a 2 line commit is perfectly acceptable.
-3. Make sure to create a good README.md with a short description, install instructions, a contributors guide and a link to the license for your code.
-4. Make sure your project checks off each of the above requirements.
-5. Prepare a video demo (narration helps!) describing how a user would interact with your working project.
-    * The video should:
-      - Have an overview of your project.(2 minutes max)
-6. Prepare a presentation to follow your video.(3 minutes max)
-    * Your presentation should:
-      - Describe something you struggled to build, and show us how you ultimately implemented it in your code.
-      - Discuss 3 things you learned in the process of working on this project.
-      - Address, if anything, what you would change or add to what you have today?
-      - Present any code you would like to highlight.   
-7. *OPTIONAL, BUT RECOMMENDED*: Write a blog post about the project and process.
+  - See a user's lists of songs, artists, albums, and playlists after logging in.
+  - Retrieve information such as the artist, album, and the duration of the song based on song selection.
+  - Play the selected song. Currently only Spotify is supported. Spotify app installation required.
+  - See stats about your music collection such as the total number of your songs and albums.
+  - Know interesting facts about the entire database. You can get answers to questions such as:
+    - Who is the person with most songs?
+    - Who is the person with most albums?
+    - In this database, which song is the longest song? Who has the longest song?
+    - In this database, which playlist is the playlist with most songs?
 
 ---
-### Common Questions:
-- How do I turn off my SQL logger?
-```ruby
-# in config/environment.rb add this line:
-ActiveRecord::Base.logger = nil
+
+  ## Getting Started
+
+- Please `fork` this github folder first, then `clone and download` it to your own computer.
+- Open your terminal, type `bundle install` to install all Ruby gems required for this application, and then type `ruby run/run.rb`. This should give you a menu of options.
+- Use the arrow keys to navigate between options.
+
+---
+
+  ## Video Demo
+
+- Check out our [Video Demo](https://drive.google.com/file/d/1wsHR_71Kq3Tk9HqfldOnMH_DGQD-NLKx/view?usp=sharing) for this application.
+
+---
+
+  ## Instruction for New Users
+
+- The first menu allows for you to create a new user. Input a username and password to create the account. 
+- As a new user, you may add your data to the currently available `.csv` data file under the folder `/db`. You may have to edit your `.csv` file so that our application can get and retrieve your data. (Please see the following section for how to prepare your `.csv` file.)
+- After you import your data, in your terminal, please type `rake db:seed`, if successful, your data should be already in our database `development.db` under `/db` folder. 
+---
+
+  ## For New Users: How to Prepare your .CSV File?
+  
+- We recommend new users to generate .csv files via [Exportify](https://rawgit.com/watsonbox/exportify/master/exportify.html), a free app that automatically generates .csv file for each Spotify playlist.
+
+- The sample data included here is a combination of several playlists for two users. After we retrieve data from [Exportify](https://rawgit.com/watsonbox/exportify/master/exportify.html), we also included account information (username and password) in the sample data file. 
+
+- **Additional Tips**: If you are not familiar with .csv file format, please check out [Excel to CSV](https://knowledgebase.constantcontact.com/articles/KnowledgeBase/6409-saving-an-excel-file-as-a-csv-file?lang=en_US).
+
+- **Additional Tips**: If you want to get data from other music and video sources, please check out the [Payed option for many sources](https://freeyourmusic.com/) for details. 
+
+---
+  ## Menu Structure
+
 ```
+Welcome
+  1. Log In
+      * log in
+          1. Your Music
+              - What would you like to see?
+              1. Your Songs
+                  - What song would you like to choose?
+                  - Choose a song
+                      - What information would you like to see for this song?
+                      1. Artist
+                      2. Album
+                      3. Duration of the song
+                      4. Play Song
+                          - only works with Spotify app
+              2. Your Playlists
+                 - Lists your playlists by name.
+              3. Your Artists
+                  - Which artist would you like to choose?
+                  - choose artist
+                    - What information would you like to know for this artist?
+                  1. Songs
+                  2. Albums
+              4. Your Albums
+                  - Which album would you like to choose?
+                  - Choose album
+                    - What information would you like to know for this album?
+                  1. Songs
+                  2. Artists
+              5. No. I don't want anything. take me back to the main menu.
+          2. Your Statistics
+              - Which statistics would you like to see?
+              1. Total number of songs
+                  - You have (number) songs
+              2. Total number of albums
+                  - You have (number) albums
+          3. Suggestion
+              - currently in production
+          4. Intersting facts
+              - What fact would you like to see?
+              1. Person with most songs
+              2. Person with most albums
+              3. The longest song in this database
+                  - Gives the song and user information
+                  - Asks if you want to play the song
+              4. the biggest playlist in this database
+                  - Gives playlist name, user, and number of songs.
+          5. Nothing. Back to Welcome menu.
+  2. Create a New Account
+      - Create account
+  3. Exit. I don't want to do anything today. :(
+```
+
+---
+  ## Authors
+
+- [Trey Beauchamp](https://github.com/tbeau5595)
+- [Jing Chen](https://github.com/jcjc2019)
+
+---
+  ## Built with
+
+- [Ruby](http://ruby-doc.org/)
+- [ActiveRecord](https://api.rubyonrails.org/classes/ActiveRecord.html)
+- [Rake](https://ruby.github.io/rake/)
+- [TTY::Prompt](https://github.com/piotrmurach/tty-prompt#ttyprompt-)
+- [SQLite3](https://rubygems.org/gems/sqlite3/versions/1.3.11)
+---
+  ## Version
+    
+- 0.1. (March 8, 2019)
+
+
+      
+---
+  ## Acknowledgements
+- All instructors at the Flatiron School Houston campus. 
+- All classmates in the Flatiron School Houston campus 021819 cohort.
+- Comments and advice are always appreciated! :)
+---
