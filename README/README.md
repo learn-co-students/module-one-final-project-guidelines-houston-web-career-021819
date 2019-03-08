@@ -1,7 +1,18 @@
-## Overview
+# ZOLI Motivation Postcard Service
 
 Welome to ZOLI POST! If you would like to send motivation postcards to your loved ones, you are in the right place.
+In this CLI application, you will be able to see your current postcards, send a new postcard, revise your postcard and cancel your postcard.
 
+## Getting Started
+fork this application and clone it to your local machine.
+Bedore you run the application, make sure you run bundle install first in your terminal to install all the gems required in the Gemfile
+Then you can start running the program!
+
+
+## Running the application
+
+
+## Models
 In this CLI application, We have built a postcard domain model to deliver this service. We have a sender, receiver and postcard model. They are associated in the following way:
 
 * A sender has many postcards and has many receivers through postcards
@@ -14,7 +25,6 @@ We've set up the migrations in the `db/migrate` directory to create the senders,
 In`db/migrate` directory, we've also set up some data in the seeds file to run the application. 
 
 
-## Install Instructions
-Before you run the application, make sure you run bundle install first in the terminal, it will install all the required gems in the Gemfile
+
 
 ## Deliver

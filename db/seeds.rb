@@ -10,14 +10,14 @@
  Postcard.create(sender_id: 1, receiver_id: 2, category:"Colleague", size:"Large($3.50)", deco: "Audio($2.00)", cost:4.50,                      
                  message:"Start by doing what’s necessary; then do what’s possible; and suddenly you are doing the impossible.")
  Postcard.create(sender_id: 1, receiver_id: 3, category:"Friend", size:"Medium($3.00)", deco: "Landscape($1.00)", cost:4.00, 
-                 message:"Your are not a product of my circumstances. You are a product of my decisions.")
+                 message:"Your are not a product of your circumstances. You are a product of your decisions.")
  Postcard.create(sender_id: 1, receiver_id: 4, category:"Friend", size:"Medium($3.00)", deco: "Animal($1.00)", cost:4.00, 
                  message:"The best way to gain self-confidence is to do what you are afraid to do")
 
 
  ##### 2.Cory
  Cory = Sender.create(name: "Cory Harper", password:"I am Cory", address: "Table 1", email: "Cory.Harper@flatironschool.com")
- Cory_friend = Receiver.create(name: "Talor Swift", address: "3681  Monroe Street")
+ Cory_friend = Receiver.create(name: "Taylor Swift", address: "3681  Monroe Street")
  Cory_Colleague = Receiver.create(name: "Ryan Reynolds", address:"871 Sutter St")
  Cory_grandparent = Receiver.create(name: "George Clooney", address:"974 Valencia St")
 
