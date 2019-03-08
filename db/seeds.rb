@@ -11,7 +11,8 @@
                  message:"Start by doing what’s necessary; then do what’s possible; and suddenly you are doing the impossible.")
  Postcard.create(sender_id: 1, receiver_id: 3, category:"Friend", size:"Medium($3.00)", deco: "Landscape($1.00)", cost:4.00, 
                  message:"Your are not a product of my circumstances. You are a product of my decisions.")
-
+ Postcard.create(sender_id: 1, receiver_id: 4, category:"Friend", size:"Medium($3.00)", deco: "Animal($1.00)", cost:4.00, 
+                 message:"The best way to gain self-confidence is to do what you are afraid to do")
 
 
  ##### 2.Cory
@@ -26,7 +27,8 @@
                  message:"You’re going to go through tough times – that’s life. But I say, ‘Nothing happens to you, it happens for you.’ See the positive in negative events.")
  Postcard.create(sender_id: 2, receiver_id: 6, category:"Grandparent", size:"Medium($3.0)", deco: "Landscape($1.00)", cost:3.00, 
                  message:"Success means doing the best we can with what we have. Success is the doing, not the getting; in the trying, not the triumph. Success is a personal standard, reaching for the highest that is in us, becoming all that we can be.")
- 
+ Postcard.create(sender_id: 2, receiver_id: 2, category:"Friend", size:"Small($2.50)", deco: "Animal($1.00)", cost:3.50, 
+                 message:"The two most important days in your life are the day you are born and the day you find out why.")
 
 
 
