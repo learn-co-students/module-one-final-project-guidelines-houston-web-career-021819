@@ -24,6 +24,7 @@ def send_a_new_post_card(current_sender)
     choices = {"[1] Yes, I would love to see my postcard" => -> do view_postcard(current_sender) end, 
                "[2] Revise my postcard" => -> do revise_your_postcard(current_sender) end, 
                "[3] Cancel this postcard" => -> do cancel_your_order(current_sender) end,
-               "[4] Create another lovely postcard" => -> do send_a_new_post_card(current_sender) end}.each {|option, methods| option}
+               "[4] Create another lovely postcard" => -> do send_a_new_post_card(current_sender) end,
+               "[5] Exit" => -> do exit! end}.each {|option, methods| option}
     selection = prompt.select(" Your postcard is complete(total_cost: $#{total_cost}) Would you like to view your lovely postcard?", choices)
 end

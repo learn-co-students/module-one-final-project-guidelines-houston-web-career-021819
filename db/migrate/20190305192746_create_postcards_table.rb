@@ -3,7 +3,7 @@ class CreatePostcardsTable < ActiveRecord::Migration[5.0]
     create_table :postcards do |t|
       t.belongs_to :sender
       t.belongs_to :receiver
-      t.string :category
+      t.string :category 
       t.string :size
       t.string :deco
       t.float :cost

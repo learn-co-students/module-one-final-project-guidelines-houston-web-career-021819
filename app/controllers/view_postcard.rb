@@ -19,19 +19,20 @@
     
     
     puts ""
-    puts "From💌: #{current_sender.name}"
     puts ""
     puts "To: #{selected_receiver}"
     puts ""
     puts "Message: #{selected_postcard.message}"
-    puts "#{Time.now}".to_s.slice(0, 10) 
+    puts ""
+    puts "From💌: #{current_sender.name}"    
     puts ""
 
     prompt = TTY::Prompt.new
-    choices = {"[1] Send a new postcard" => -> do send_a_new_post_card end, 
-               "[2] View postcard" => -> do view_postcard end, 
-               "[3] Revise your postcard" => -> do revise_your_postcard end, 
-               "[4] Cancel your order" => -> do cancel_your_order end}.each {|option, methods| option}
+    choices = {"[1] Send a new postcard" => -> do send_a_new_post_card(current_sender) end, 
+               "[2] View postcard" => -> do view_postcard(current_sender) end, 
+               "[3] Revise your postcard" => -> do revise_your_postcard(current_sender) end, 
+               "[4] Cancel your order" => -> do cancel_your_order(current_sender) end,
+               "[5] Exit" => -> do exit! end}.each {|option, methods| option}
     selection = prompt.select("Do you like your card #{current_sender.name.split(" ")[0]} What would you like to do now?", choices)
     
   
