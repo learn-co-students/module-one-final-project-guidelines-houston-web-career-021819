@@ -28,10 +28,21 @@ Run `ruby ./bin/run.rb` in your terminal, you will start with a greeting message
 
 ## Contributor's Guide
 
+Thanks for taking the time to contribute! Here are a few need to know items:
+
 ### Program Structure
  * Database connection and files connectio can be are set up in environment file in `config/environment.rb`
  * You can find database schema and data in `db`, and models in `app/models`
  * All deliverables and methods are located in `app/controllers`
+ 
+ ### Issues to work on
+ * Include the ability to have a postcard delete immediately after cancelled. Currently, the program has to re-run for the card to be deleted completely from the database.
+ 
+  * The ability to have multiple cards sent to the same receiver without overriding. 
+  
+  Ruby's best practices are used in regard to style. 
+ 
+ 
 
 
 
