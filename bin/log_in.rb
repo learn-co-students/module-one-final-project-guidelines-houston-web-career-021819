@@ -7,7 +7,6 @@ def log_in
       key(:password).mask('Please enter your password:', mask: heart)
    end
    
-   
    current_account = Account.find_by(username: login[:username], password: login[:password])
     
    if !current_account

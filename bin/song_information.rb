@@ -20,7 +20,7 @@ def song_information(current_user, selected_song)
         arr = duration_mins.to_s.split('.')
         min = arr[0]
         sec = (((arr[1].to_i)  / 10000 * 60).round(2)).to_s.first(2).to_i
-        puts "#{min} minutes and #{sec} seconds." 
+        puts "❤ ❤ ❤ ❤ #{min} minutes and #{sec} seconds. ❤ ❤ ❤ ❤" 
         main_menu(current_user)
         
     when 4

@@ -1,7 +1,7 @@
 def choose_album(current_user)
     albums = users_songs(current_user).map { | song | song.album }
     #puts "\e[H\e[2J"
-    album_selection = $prompt.select("❤ ❤ ❤ Which album would you like to choose? ❤ ❤ ❤") do | menu |
+    album_selection = $prompt.select("❤ ❤ ❤ Which album would you like to choose? ❤ ❤ ❤", per_page: 35) do | menu |
         menu.enum "."
         albums.each_with_index do | album, index |
             menu.choice album, index

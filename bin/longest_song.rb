@@ -9,10 +9,10 @@ def longest_song(current_user)
     account = Account.all.select { | account | longest_song.account_id == account.id }[0]
     name = account.username
 
-    puts "❤ ❤ The duration of the longest song in your database: #{min} minutes and #{sec} seconds. ❤ ❤"
-    puts "❤ ❤ The title of the longest song in your database is '#{longest_song.title}'. ❤ ❤"
-    puts "❤ ❤ The longest song in your database belongs to #{name}. ❤ ❤"    
-    permission = $prompt.yes?("❤ ❤ Do you want to listen to the song now? ❤ ❤") do |q|
+    puts "❤ ❤ ❤ The duration of the longest song in your database: #{min} minutes and #{sec} seconds. ❤ ❤ ❤"
+    puts "❤ ❤ ❤ The title of the longest song in your database is '#{longest_song.title}'. ❤ ❤ ❤"
+    puts "❤ ❤ ❤ The longest song in your database belongs to #{name}. ❤ ❤ ❤"    
+    permission = $prompt.yes?("❤ ❤ Do you want to listen to the song now? ❤ ❤ ❤") do |q|
         q.suffix 'y/n'
     end
     case permission
